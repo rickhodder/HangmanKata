@@ -2,6 +2,12 @@ using System;
 
 namespace HangmanKata
 {
+    public enum GuessResult
+    {
+        Invalid,
+        Incorrect,
+    }
+
     public class Hangman
     {
         private readonly string _secretWord;
@@ -14,9 +20,15 @@ namespace HangmanKata
             _incorrectGuesses = incorrectGuesses;
         }
 
-        public bool Guess(char letter)
+        public GuessResult Guess(char letter)
         {
-            return Char.IsLetter(Char.ToUpper(letter));
+
+            if (!Char.IsLetter(Char.ToUpper(letter)))
+            { 
+                return GuessResult.Invalid;
+            }
+
+            return GuessResult.Incorrect;
         }
     }
 }
