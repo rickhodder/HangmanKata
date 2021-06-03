@@ -6,9 +6,9 @@ namespace HangmanKata
     public class HangmanTests
     {
         [Fact]
-        public void Test1()
+        public void Ctor_Settings()
         {
-
+            var sut = new Hangman("allcaps", 3);
         }
     }
 }
