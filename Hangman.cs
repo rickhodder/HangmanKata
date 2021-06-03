@@ -1,3 +1,5 @@
+using System;
+
 namespace HangmanKata
 {
     public class Hangman
@@ -10,6 +12,11 @@ namespace HangmanKata
         {
             _secretWord = secretWord.ToUpper();
             _incorrectGuesses = incorrectGuesses;
+        }
+
+        public bool Guess(char letter)
+        {
+            return Char.IsLetter(Char.ToUpper(letter));
         }
     }
 }
